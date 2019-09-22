@@ -34,7 +34,7 @@
 
 .mainHeading{
   margin: 1em 0 0.5em 0;
-	color: #343434;
+	color: #cca6a6;
 	font-weight: normal;
 	font-family: 'Ultra', sans-serif;   
 	font-size: 36px;
@@ -42,5 +42,59 @@
 	text-transform: uppercase;
   text-shadow: 0 2px white, 0 3px #777;
   text-align: center;
-  background: #61dafb;
+  background: #09262e;
+}
+
+.gallery-image {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-image img {
+  height: 250px;
+  width: 350px;
+  transform: scale(1);
+  transition: transform 0.4s ease;
+}
+
+.image-box {
+  box-sizing: content-box;
+  margin: 10px;
+  height: 250px;
+  width: 350px;
+  overflow: hidden;
+  display: inline-block;
+  color: rgb(83, 16, 16);
+  position: relative;
+  background: rgb(247, 241, 241);
+  box-shadow: 10px 10px grey;
+}
+
+.transparent-box {
+  height: 250px;
+  width: 350px;
+  background-color: rgba(0,0,0,0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: background-color 0.3s ease;
+}
+
+.image-box:hover img{
+  transform: scale(1.1);
+}
+
+.caption {
+  position: absolute;
+  bottom: 5px;
+  left: 20px;
+  
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.image-box:hover .caption {
+  transform: translateY(-20px);
+  opacity: 1.0;
 }

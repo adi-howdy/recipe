@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Form from "react-bootstrap/Form";
+import NavBar from './NavBar';
+
 
 const validateForm = (errors) => {
     let valid = true;
@@ -83,6 +85,7 @@ onSubmitHanle = (event)=> {
     const { errors } = this.state;
     return (
       <React.Fragment>
+         <NavBar />
         <Form onSubmit={this.handleSubmit}>
           <Form.Group controlId="Name">
             <Form.Label >Name</Form.Label>

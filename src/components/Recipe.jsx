@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Search from "./Search";
 import RecipeList from "./RecipeList";
+import Modal from "react-bootstrap/Modal";
+
 
 class Recipe extends Component {
   state = {
@@ -8,11 +10,12 @@ class Recipe extends Component {
   };
 
   submitHandle = e => {
+    const recipeName = e.target.elements.recipeName.value;
     e.preventDefault();
-    //console.log(e.target.elements.recipeName.value);
+    console.log(e.target.elements.recipeName.value);
 
     fetch(
-      "https://www.food2fork.com/api/search?key=b6e56580d86ae5aca0c37b4190583b63"
+      `https://www.food2fork.com/api/search?key=b6e56580d86ae5aca0c37b4190583b63&q=${recipeName}`
     )
       .then(res => res.json())
       .then(result => {
@@ -36,5 +39,7 @@ class Recipe extends Component {
     );
   }
 }
+
+
 
 export default Recipe;
